@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Foodie's Delight</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="login-page">
+    <div class="overlay"></div>
+    <div class="login-container">
+        <h2>Login to <span class="highlight">Foodie's Delight</span></h2>
+        <form id="loginForm">
+            <input type="text" name="username" placeholder="Enter your name" required>
+            <input type="tel" name="number" placeholder="Enter your phone number" required pattern="[0-9]{10}">
+            <button type="submit">Login</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const username = this.username.value.trim();
+            const number = this.number.value.trim();
+            if (username && number.match(/^\d{10}$/)) {
+                localStorage.setItem('username', username);
+                localStorage.setItem('phone', number);
+                window.location.href = 'home.html'; // Redirect after login
+            } else {
+                alert('Please enter a valid name and 10-digit phone number.');
+            }
+        });
+    </script>
+</body>
+</html>

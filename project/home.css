@@ -1,0 +1,244 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body.home-page {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url('background.jpg') no-repeat center center/cover;
+    color: #fff;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Overlay with blur */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    z-index: 0;
+}
+
+/* Header and navigation */
+header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+    animation: fadeInHeader 2s ease-out;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    vertical-align: middle;
+    margin-right: 10px;
+    border-radius: 10px; /* optional */
+}
+
+.logo {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 2px #000;
+    animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+.logo span {
+    color: #fff;
+}
+
+nav a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
+    font-weight: bold;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    height: 2px;
+    width: 100%;
+    background: #ff4d4d;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    transform-origin: right;
+}
+
+nav a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+nav a:hover {
+    color: #ff4d4d;
+    transform: scale(1.1);
+}
+
+/* Welcome section */
+.welcome-section {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1;
+    max-width: 90%;
+    animation: fadeInWelcome 2s ease-out;
+}
+
+.welcome-section h2 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px #000;
+    animation: textGlow 1.5s ease-in-out infinite alternate;
+}
+
+.highlight {
+    color: #ffcc00;
+}
+
+.flavor {
+    color: #ff6666;
+}
+
+.welcome-section p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px #000;
+    animation: fadeInText 2s ease-out;
+}
+
+.welcome-section button {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    border: none;
+    background: #ff4d4d;
+    color: #fff;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.welcome-section button:hover {
+    background: #e63946;
+    transform: scale(1.05);
+}
+
+/* Animation for glowing effect on logo */
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px #ff4d4d, 0 0 20px #ff4d4d, 0 0 30px #ff4d4d;
+    }
+    100% {
+        text-shadow: 0 0 20px #ff4d4d, 0 0 40px #ff4d4d, 0 0 60px #ff4d4d;
+    }
+}
+
+/* Fade in effect for header */
+@keyframes fadeInHeader {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade in effect for welcome section */
+@keyframes fadeInWelcome {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade in effect for paragraph text */
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Text Glow animation for heading */
+@keyframes textGlow {
+    0% {
+        color: #ffcc00;
+        text-shadow: 0 0 15px #ffcc00;
+    }
+    50% {
+        color: #ff6666;
+        text-shadow: 0 0 25px #ff6666;
+    }
+    100% {
+        color: #ffcc00;
+        text-shadow: 0 0 15px #ffcc00;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 15px 20px;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+        font-size: 2rem;
+    }
+
+    nav a {
+        margin: 10px;
+        font-size: 1rem;
+    }
+
+    .welcome-section h2 {
+        font-size: 2.2rem;
+    }
+
+    .welcome-section p {
+        font-size: 1.2rem;
+    }
+
+    .welcome-section button {
+        font-size: 1rem;
+        padding: 10px 25px;
+    }
+}
+.logo {
+    width: 50px;
+    height: 50px;
+    vertical-align: middle;
+    margin-right: 10px;
+    border-radius: 10px; /* optional */
+}

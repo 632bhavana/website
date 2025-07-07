@@ -1,0 +1,96 @@
+ <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Menu | Foodie's Delight</title>
+    <link rel="stylesheet" href="menu.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Foodie's Delight</h1>
+      <nav>
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+  
+    <section class="menu-section">
+      <h2 class="fade-in">Order Your Favorite Dishes</h2>
+  
+      <div class="menu-grid">
+        <!-- North Indian -->
+        <div class="menu-card fade-in">
+          <h3 class="category-title">North Indian Delights</h3>
+          <div class="dishes-list">
+            <label><input type="checkbox" value="Butter Chicken - ₹399"> Butter Chicken <span>₹399</span></label>
+            <label><input type="checkbox" value="Paneer Tikka - ₹349"> Paneer Tikka <span>₹349</span></label>
+            <label><input type="checkbox" value="Garlic Naan - ₹99"> Garlic Naan <span>₹99</span></label>
+            <label><input type="checkbox" value="Dal Makhani - ₹299"> Dal Makhani <span>₹299</span></label>
+            <label><input type="checkbox" value="Chicken Biryani - ₹399"> Chicken Biryani <span>₹399</span></label>
+          </div>
+        </div>
+  
+        <!-- South Indian -->
+        <div class="menu-card fade-in">
+          <h3 class="category-title">South Indian Favorites</h3>
+          <div class="dishes-list">
+            <label><input type="checkbox" value="Masala Dosa - ₹249"> Masala Dosa <span>₹249</span></label>
+            <label><input type="checkbox" value="Idli Sambar - ₹199"> Idli Sambar <span>₹199</span></label>
+            <label><input type="checkbox" value="Rava Dosa - ₹229"> Rava Dosa <span>₹229</span></label>
+            <label><input type="checkbox" value="Vada - ₹99"> Vada <span>₹99</span></label>
+          </div>
+        </div>
+  
+        <!-- Italian -->
+        <div class="menu-card fade-in">
+          <h3 class="category-title">Italian Classics</h3>
+          <div class="dishes-list">
+            <label><input type="checkbox" value="Margherita Pizza - ₹499"> Margherita Pizza <span>₹499</span></label>
+            <label><input type="checkbox" value="Pasta Alfredo - ₹399"> Pasta Alfredo <span>₹399</span></label>
+            <label><input type="checkbox" value="Ravioli - ₹449"> Ravioli <span>₹449</span></label>
+            <label><input type="checkbox" value="Bruschetta - ₹199"> Bruschetta <span>₹199</span></label>
+          </div>
+        </div>
+  
+        <!-- Chinese -->
+        <div class="menu-card fade-in">
+          <h3 class="category-title">Chinese Specialties</h3>
+          <div class="dishes-list">
+            <label><input type="checkbox" value="Hakka Noodles - ₹299"> Hakka Noodles <span>₹299</span></label>
+            <label><input type="checkbox" value="Veg Manchurian - ₹329"> Veg Manchurian <span>₹329</span></label>
+            <label><input type="checkbox" value="Chilli Paneer - ₹349"> Chilli Paneer <span>₹349</span></label>
+            <label><input type="checkbox" value="Spring Rolls - ₹249"> Spring Rolls <span>₹249</span></label>
+          </div>
+        </div>
+      </div>
+  
+      <div class="seating-selection fade-in">
+        <h3>Select Your Seating</h3>
+        <select id="seating">
+          <option value="Window Table">Window Table</option>
+          <option value="Center Table">Center Table</option>
+          <option value="Outdoor Seating">Outdoor Seating</option>
+          <option value="Private Booth">Private Booth</option>
+        </select>
+      </div>
+  
+      <button class="place-order-btn fade-in" onclick="placeOrder()">Place Order</button>
+    </section>
+  
+    <div id="orderPopup" class="popup">
+      <div class="popup-content">
+        <span class="close-btn" onclick="closePopup()">&times;</span>
+        <h2>Order Confirmed!</h2>
+        <p><strong>Order Number:</strong> <span id="orderNumber"></span></p>
+        <p><strong>Selected Dishes:</strong> <span id="orderItems"></span></p>
+        <p><strong>Seating:</strong> <span id="orderSeating"></span></p>
+        <p><strong>Arrival Time:</strong> <span id="arrivalTime"></span></p>
+      </div>
+    </div>
+  
+    <script src="script.js"></script>
+  </body>
+  </html>
+  

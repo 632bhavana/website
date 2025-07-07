@@ -1,0 +1,227 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url('background.jpg') no-repeat center center/cover;
+    background-size: cover;
+    color: #fff;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Overlay with blur */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    z-index: 0;
+}
+header {
+    text-align: center;
+    padding-top: 30px;
+    position: relative;
+    z-index: 2;
+  }
+  
+  header h1 {
+    font-size: 3rem;
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+    margin-bottom: 10px;
+  }
+  
+  header nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 5px;
+  }
+  
+  header nav a {
+    color: #fff;
+    font-size: 1.2rem;
+    text-decoration: none;
+    padding: 5px 10px;
+    position: relative;
+  }
+  
+  header nav a:hover {
+    color: #ffcc00;
+  }
+  header h1 {
+    text-shadow: 0 0 10px #fff, 0 0 20px #ff4d4d, 0 0 30px #ff4d4d;
+  }
+  
+/* Menu Section */
+.menu-section {
+    margin-top:1px;
+    padding: 30px;
+    text-align: center;
+    position: relative;
+}
+.menu-grid {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 30px;
+    overflow-x: auto;
+    padding: 20px 0;
+    scroll-snap-type: x mandatory;
+}
+
+.menu-card {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 15px;
+    min-width: 280px;
+    max-width: 300px;
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+    transition: transform 0.3s ease;
+}
+
+.menu-card:hover {
+    transform: translateY(-5px);
+}
+
+.category-title {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: #ffcc70;
+}
+
+.dishes-list label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px 12px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.dishes-list label:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.dishes-list input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+/* Seating + Button Section */
+.seating-selection {
+    margin-top: 30px;
+    text-align: center;
+}
+
+#seating {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+}
+
+/* Order Button */
+.place-order-btn {
+    margin-top: 20px;
+    padding: 12px 28px;
+    font-size: 1.1rem;
+    background-color: #ff4d4d;
+    border: none;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.place-order-btn:hover {
+    background-color: #e63636;
+}
+
+/* Popup (unchanged) */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.popup-content {
+    background: #fff;
+    color: #000;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.close-btn {
+    font-size: 2rem;
+    cursor: pointer;
+    color: #000;
+}
+
+.fade-in {
+    animation: fadeIn 1.5s ease-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@media screen and (max-width: 768px) {
+    .menu-grid {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      padding-bottom: 30px;
+    }
+  
+    .menu-card {
+      min-width: 250px;
+    }
+  }
+  .menu-grid::-webkit-scrollbar {
+    height: 8px;
+}
+.menu-grid::-webkit-scrollbar-thumb {
+    background: #ff4d4d;
+    border-radius: 4px;
+}
+.menu-card {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeSlideUp 1s ease forwards;
+  }
+  
+  @keyframes fadeSlideUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
